@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Databinding_with_api.FormPage"
+             Title="FormPage">
+    <VerticalStackLayout>
+        <Label
+            Text="Form para agregar a personas"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+
+        <Label
+            Text="Nombre"/>
+        <Entry x:Name="EntryNombre"
+               Placeholder="Ingresa nombre de persona"
+               WidthRequest="300"
+               HorizontalOptions="Start"/>
+        <Label Text="Apellido"/>
+        <Entry x:Name="EntryApellido"
+               Placeholder="Ingresa apellido de persona"
+               WidthRequest="300"
+               HorizontalOptions="Start"/>
+        <Label Text="Fecha de nacimiento"/>
+        <DatePicker x:Name="DateFhNac"
+                    HorizontalOptions="Start"/>
+
+        <StackLayout x:Name="sexoStackLayout" RadioButtonGroup.GroupName="sexo">
+            <Label Text="Sexo"/>
+            <RadioButton Value="h" Content="Masculino"/>
+            <RadioButton Value="m" Content="Femenino"/>
+            <RadioButton Value="o" Content="Otro"/>
+        </StackLayout>
+
+        <StackLayout x:Name="rolStackLayout" RadioButtonGroup.GroupName="rol">
+            <Label Text="Rol"/>
+            <RadioButton Value="1" Content="Alumno"/>
+            <RadioButton Value="2" Content="Profesor"/>
+            <RadioButton Value="3" Content="Administrativo"/>
+            <RadioButton Value="4" Content="Otro"/>
+        </StackLayout>
+
+        <Button Text="Visualizar formato de persona"
+                WidthRequest="250"
+                Margin="10"
+                HorizontalOptions="Start"
+                Clicked="Button_Clicked"/>
+
+        <Button Text="Mandar persona"
+                Margin="10"
+                HorizontalOptions="Start"
+                Clicked="Button_Clicked_1"/>
+    </VerticalStackLayout>
+</ContentPage>
